@@ -17,7 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/a-propos', function() {
-    return view('a-propos');
+Route::get('/about', function() {
+    return view('about');
+});
+
+Route::get('/hello/{name}', function() {
+
+    return view('hello', [
+        'name' => request('name'),
+    ]);
 });
 
