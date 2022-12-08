@@ -22,9 +22,12 @@ Route::get('/about', function() {
 });
 
 Route::get('/hello/{name}', function() {
-
     return view('hello', [
         'name' => request('name'),
     ]);
+});
+
+Route::get('/signup', function() {
+   return view('signup');
 });
 
