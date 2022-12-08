@@ -32,5 +32,5 @@ Route::get('/signup', function() {
 });
 
 Route::post('/signup', function() {
-    return 'Form received';
+    return "Form received, your email is " . request('email') . " and your password is " . request('password');
 });
