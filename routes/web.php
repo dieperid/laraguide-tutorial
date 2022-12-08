@@ -22,9 +22,15 @@ Route::get('/about', function() {
 });
 
 Route::get('/hello/{name}', function() {
-
     return view('hello', [
         'name' => request('name'),
     ]);
 });
 
+Route::get('/signup', function() {
+   return view('signup');
+});
+
+Route::post('/signup', function() {
+    return "Form received, your email is " . request('email') . " and your password is " . request('password');
+});
