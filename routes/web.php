@@ -32,5 +32,11 @@ Route::get('/signup', function() {
 });
 
 Route::post('/signup', function() {
+    $user = new App\Models\Users();
+    $user->email = request('email');
+    $user->password = request('password');
+
+    $user->save();
+
     return "Form received, your email is " . request('email') . " and your password is " . request('password');
 });
