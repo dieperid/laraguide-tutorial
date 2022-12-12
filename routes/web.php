@@ -34,7 +34,7 @@ Route::get('/signup', function() {
 Route::post('/signup', function() {
     $user = new App\Models\Users();
     $user->email = request('email');
-    $user->password = request('password');
+    $user->password = bcrypt(request('password'));
 
     $user->save();
 
