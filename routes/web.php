@@ -32,11 +32,10 @@ Route::get('/signup', function() {
 });
 
 Route::post('/signup', function() {
-    $user = new App\Models\Users();
-    $user->email = request('email');
-    $user->password = bcrypt(request('password'));
-
-    $user->save();
+    $user = App\Models\Users::create([
+        'email' => request('email'),
+        'password' => bcrypt(request('password')),
+    ]);
 
     return "Form received, your email is " . request('email') . " and your password is " . request('password');
 });
